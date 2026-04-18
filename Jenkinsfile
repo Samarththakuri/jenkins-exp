@@ -7,12 +7,6 @@ pipeline {
 
     stages {
 
-        stage('Clone Source') {
-            steps {
-                git branch:main,url:'https://github.com/Samarththakuri/jenkins-exp.git'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t $IMAGE_NAME:latest .'
